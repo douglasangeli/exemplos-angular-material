@@ -1,0 +1,50 @@
+<mat-card-title-group>
+  <mat-card-title>
+    Slider
+  </mat-card-title>
+  <mat-card-subtitle>
+    Precisa do HammerJS para ter o comportamento esperado
+  </mat-card-subtitle>
+</mat-card-title-group>
+
+<mat-card-content>
+  <h5>Simples</h5>
+  <div class="example-container">
+    <mat-slider></mat-slider>
+  </div>
+
+  <mat-divider></mat-divider>
+
+  <h5>Com valor padrão, mínimo, máximo e tamanho dos passos</h5>
+  <div class="example-container">
+    <mat-slider min="1" max="5" step="1" value="2.0"></mat-slider>
+  </div>
+
+  <mat-divider [inset]="true"></mat-divider>
+
+  <h5>Vertical</h5>
+  <div class="example-container">
+    <mat-slider vertical></mat-slider>
+  </div>
+  
+  <h5>Invertido</h5>
+  <div class="example-container">
+    <mat-slider invert></mat-slider>
+  </div>
+
+  <h5>Indicação de Valor Atual</h5>
+  <div class="example-container">
+    <mat-slider thumbLabel tickInterval="1" min="0" max="10"></mat-slider>
+  </div>
+
+  <h5>Indicação de Valor Customizada</h5>
+  <div class="example-container">
+    <mat-slider thumbLabel [displayWith]="formatLabel" tickInterval="1000" min="1" max="100000"></mat-slider>
+  </div>
+
+  <h5>Intervalo Automático</h5>
+  <div class="example-container">
+    <mat-slider tickInterval="auto"></mat-slider>
+  </div>
+
+</mat-card-content>

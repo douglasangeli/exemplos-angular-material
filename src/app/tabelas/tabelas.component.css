@@ -1,0 +1,19 @@
+table {
+    width: 100%;
+}
+mat-form-field {
+    width: 100%;
+}
+
+th.mat-sort-header-sorted {
+   color: black;
+}
+
+.example-container {
+    height: 300px;
+    overflow: auto;
+}
+
+mat-slide-toggle {
+    margin-top: 20px;
+}

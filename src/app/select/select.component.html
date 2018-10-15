@@ -1,0 +1,88 @@
+<mat-card-title>
+  Select
+</mat-card-title>
+<mat-card-content>
+
+  <form>
+    <h5>Select Simples</h5>
+    <mat-form-field>
+      <mat-select placeholder="Comida favorita">
+        <mat-option *ngFor="let comida of comidas" [value]="comida.value">
+          {{comida.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <h5>Múltipla Escolha</h5>
+    <mat-form-field>
+      <mat-select placeholder="Comidas favoritas" [formControl]="comidasControl" multiple>
+        <mat-option *ngFor="let comida of comidas" [value]="comida.value">
+          {{comida.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+
+
+    <h5>Two-way Databinding</h5>
+    <mat-form-field>
+      <mat-select placeholder="Comida Favorita" [(ngModel)]="comidaSelecionada" name="food">
+        <mat-option>Não gosto de comida</mat-option>
+        <mat-option *ngFor="let food of comidas" [value]="food.value">
+          {{food.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <p> Selected value: {{comidaSelecionada}} </p>
+
+
+    <h5>Desabilitar Select ou Opções</h5>
+    <p>
+      <mat-checkbox [formControl]="disableSelect">Desabilitar o Select</mat-checkbox>
+    </p>
+    <p>
+      <mat-form-field>
+        <mat-select placeholder="Escolha uma" [disabled]="disableSelect.value">
+          <mat-option value="option1">Opção 1</mat-option>
+          <mat-option value="option2" disabled>Opção 2 (desabilitada)</mat-option>
+          <mat-option value="option3">Opção 3</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </p>
+
+    <h5>Form field features</h5>
+    <mat-form-field>
+      <mat-select placeholder="Animal Favorito" [formControl]="animalControl" required>
+        <mat-option>--</mat-option>
+        <mat-option *ngFor="let animal of animals" [value]="animal">
+          {{animal.name}}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="animalControl.hasError('required')">Por favor, selecione um animal</mat-error>
+      <mat-hint>{{animalControl.value?.sound}}</mat-hint>
+    </mat-form-field>
+
+    <h5>Grupo de Opções</h5>
+    <mat-form-field>
+      <mat-select placeholder="Pokemon" [formControl]="pokemonControl">
+        <mat-option>-- None --</mat-option>
+        <mat-optgroup *ngFor="let group of pokemonGroups" [label]="group.name" [disabled]="group.disabled">
+          <mat-option *ngFor="let pokemon of group.pokemon" [value]="pokemon.value">
+            {{pokemon.viewValue}}
+          </mat-option>
+        </mat-optgroup>
+      </mat-select>
+    </mat-form-field>
+  </form>
+
+  <h5>Estilização no painel de opções</h5>
+  <mat-form-field>
+    <mat-select placeholder="Panel color" [formControl]="panelColor" panelClass="example-panel-{{panelColor.value}}">
+      <mat-option value="red">Red</mat-option>
+      <mat-option value="green">Green</mat-option>
+      <mat-option value="blue">Blue</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+</mat-card-content>

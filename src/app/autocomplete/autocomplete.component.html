@@ -1,0 +1,69 @@
+<mat-card-title>
+  Autocomplete
+</mat-card-title>
+<mat-card-content>
+
+  <form class="example-form">
+    <h5>Simples</h5>
+    <mat-form-field class="example-full-width">
+      <input type="text" placeholder="Selecione a opção correta" aria-label="Number" matInput [formControl]="controleSimples"
+        [matAutocomplete]="auto">
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let opcao of opcoes" [value]="opcao">
+          {{opcao}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+
+
+    <h5>Com Filtro</h5>
+    <mat-form-field class="example-full-width">
+      <input type="text" placeholder="Selecione a opção correta" aria-label="Number" matInput [formControl]="controleComFiltro"
+        [matAutocomplete]="auto">
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let opcao of opcoesFiltradas | async" [value]="opcao">
+          {{opcao}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+
+    <h5>Com Objeto</h5>
+    <mat-form-field class="example-full-width">
+      <input type="text" placeholder="Usuário" aria-label="Usuário" matInput [formControl]="controleObjeto"
+        [matAutocomplete]="auto">
+      <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+        <mat-option *ngFor="let usuario of usuariosFiltrados | async" [value]="usuario">
+          {{usuario.nome}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+
+
+  </form>
+
+  <h5>Anexando a um elemento diferente</h5>
+  <div class="custom-wrapper-example" matAutocompleteOrigin #origin="matAutocompleteOrigin">
+    <input matInput [formControl]="controleDiferente" [matAutocomplete]="auto2" [matAutocompleteConnectedTo]="origin">
+  </div>
+
+  <mat-autocomplete #auto2="matAutocomplete">
+    <mat-option *ngFor="let opcao of opcoes" [value]="opcao">{{opcao}}</mat-option>
+  </mat-autocomplete>
+
+
+
+  <form [formGroup]="stateForm">
+    <h5>Grupos</h5>
+    <mat-form-field>
+      <input type="text" matInput placeholder="States Group" formControlName="stateGroup" required [matAutocomplete]="autoGroup">
+      <mat-autocomplete #autoGroup="matAutocomplete">
+        <mat-optgroup *ngFor="let group of stateGroupOptions | async" [label]="group.letter">
+          <mat-option *ngFor="let name of group.names" [value]="name">
+            {{name}}
+          </mat-option>
+        </mat-optgroup>
+      </mat-autocomplete>
+    </mat-form-field>
+  </form>
+
+</mat-card-content>

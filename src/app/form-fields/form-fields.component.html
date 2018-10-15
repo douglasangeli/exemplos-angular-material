@@ -1,0 +1,110 @@
+<mat-card-title>
+  Form Fields
+</mat-card-title>
+<mat-card-content>
+
+  <h5>Imputs</h5>
+  <div class="example-container">
+    <mat-form-field>
+      <input matInput placeholder="Input">
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput placeholder="Textarea"></textarea>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-select placeholder="Select">
+        <mat-option value="option">Option</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <h5>Variações de Aparência</h5>
+  <div class="example-container">
+
+    <mat-form-field appearance="legacy">
+      <mat-label>Legacy form field</mat-label>
+      <input matInput placeholder="Placeholder">
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      <mat-hint>Hint</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field appearance="standard">
+      <mat-label>Standard form field</mat-label>
+      <input matInput placeholder="Placeholder">
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      <mat-hint>Hint</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Fill form field</mat-label>
+      <input matInput placeholder="Placeholder">
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      <mat-hint>Hint</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Outline form field</mat-label>
+      <input matInput placeholder="Placeholder">
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      <mat-hint>Dica</mat-hint>
+    </mat-form-field>
+  </div>
+
+  <h5>Dicas</h5>
+  <div class="example-container">
+    <mat-form-field hintLabel="Max 10 characters">
+      <input matInput #input maxlength="10" placeholder="Digite alguma coisa">
+      <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-select placeholder="Select me">
+        <mat-option value="option">Option</mat-option>
+      </mat-select>
+      <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+    </mat-form-field>
+  </div>
+
+  <h5>Erros</h5>
+  <div class="example-container">
+    <div class="example-container">
+      <mat-form-field>
+        <input matInput placeholder="Digite o seu email" [formControl]="email" required>
+        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <h5>Prefixo e Sufixo</h5>
+  <div class="example-container">
+    <mat-form-field>
+      <input matInput placeholder="Enter your password" [type]="esconderSenha ? 'password' : 'text'">
+      <mat-icon matSuffix (click)="esconderSenha = !esconderSenha">{{esconderSenha ? 'visibility' : 'visibility_off'}}</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Amount" type="number" class="example-right-align">
+      <span matPrefix>$&nbsp;</span>
+      <span matSuffix>.00</span>
+    </mat-form-field>
+  </div>
+
+  <h5>Temas e Tamanho</h5>
+  <form class="example-container" [formGroup]="options" [style.fontSize.px]="getFontSize()">
+    <mat-form-field [color]="options.value.color">
+      <mat-select placeholder="Color" formControlName="color">
+        <mat-option value="primary">Primary</mat-option>
+        <mat-option value="accent">Accent</mat-option>
+        <mat-option value="warn">Warn</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field [color]="options.value.color">
+      <input matInput type="number" placeholder="Font size (px)" formControlName="fontSize" min="10">
+      <mat-error *ngIf="options.get('fontSize')?.invalid">Min size: 10px</mat-error>
+    </mat-form-field>
+  </form>
+
+</mat-card-content>

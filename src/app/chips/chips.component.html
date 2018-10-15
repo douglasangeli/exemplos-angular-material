@@ -1,0 +1,55 @@
+<mat-card-title>
+  Chips
+</mat-card-title>
+
+<mat-card-content>
+
+  <h5>Lista</h5>
+  <mat-chip-list>
+    <mat-chip>One fish</mat-chip>
+    <mat-chip>Two fish</mat-chip>
+    <mat-chip color="primary" selected>Primary fish</mat-chip>
+    <mat-chip color="accent" selected>Accent fish</mat-chip>
+  </mat-chip-list>
+
+
+  <h5>Chip Input (enter ou vírgula para incluir)</h5>
+  <mat-form-field class="example-chip-list">
+    <mat-chip-list #chipListSimples>
+      <mat-chip *ngFor="let fruit of fruits1" [selectable]="selectable1" [removable]="removable1" (removed)="remove1(fruit)">
+        {{fruit.name}}
+        <mat-icon matChipRemove *ngIf="removable1">cancel</mat-icon>
+      </mat-chip>
+      <input placeholder="Frutas..." [matChipInputFor]="chipListSimples" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+        [matChipInputAddOnBlur]="addOnBlur1" (matChipInputTokenEnd)="add1($event)">
+    </mat-chip-list>
+  </mat-form-field>
+
+
+  <h5>Chip Input com Filtro</h5>
+  <mat-form-field class="example-chip-list">
+    <mat-chip-list #chipList>
+      <mat-chip *ngFor="let fruit of fruits" [selectable]="selectable" [removable]="removable" (removed)="remove(fruit)">
+        {{fruit}}
+        <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+      </mat-chip>
+      <input placeholder="Frutas..." #fruitInput [formControl]="fruitCtrl" [matAutocomplete]="auto"
+        [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes" [matChipInputAddOnBlur]="addOnBlur"
+        (matChipInputTokenEnd)="add($event)">
+    </mat-chip-list>
+    <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+      <mat-option *ngFor="let fruit of filteredFruits | async" [value]="fruit">
+        {{fruit}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+
+
+  <h5>Lista Vertical</h5>
+  <mat-chip-list class="mat-chip-list-stacked" aria-orientation="vertical">
+    <mat-chip>Papadum</mat-chip>
+    <mat-chip>Naan</mat-chip>
+    <mat-chip>Dal</mat-chip>
+  </mat-chip-list>
+
+</mat-card-content>

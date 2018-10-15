@@ -1,0 +1,38 @@
+<mat-card-title>
+  Progress
+</mat-card-title>
+<mat-card-content>
+
+  <mat-card>
+    <mat-card-title>
+      Progress Spinner
+    </mat-card-title>
+    <mat-divider [inset]="true">
+    </mat-divider>
+    <mat-card-content>
+      <mat-spinner>
+      </mat-spinner>
+    </mat-card-content>
+  </mat-card>
+
+  <br> <br>
+
+  <mat-card>
+    <mat-card-title>
+      Progress Bar
+    </mat-card-title>
+    <mat-divider [inset]="true">
+    </mat-divider>
+    <mat-card-content>
+      <h3>Determinate</h3>
+      <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
+      <h3>Indeterminate</h3>
+      <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+      <h3>Buffer</h3>
+      <mat-progress-bar mode="buffer"></mat-progress-bar>
+      <h3>Query</h3>
+      <mat-progress-bar mode="query"></mat-progress-bar>
+    </mat-card-content>
+  </mat-card>
+
+</mat-card-content>
