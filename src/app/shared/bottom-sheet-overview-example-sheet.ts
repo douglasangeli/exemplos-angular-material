@@ -1,13 +1,15 @@
-import { Component } from "@angular/core";
-import { MatBottomSheetRef } from "@angular/material";
+import { Component } from '@angular/core';
+import { MatBottomSheetRef } from '@angular/material';
 
 @Component({
-    selector: 'bottom-sheet-overview-example-sheet',
+    selector: 'app-bottom-sheet-overview-example-sheet',
     templateUrl: 'bottom-sheet-overview-example-sheet.html',
 })
-export class BottomSheetOverviewExampleSheet {
-    
-    constructor(private bottomSheetRef: MatBottomSheetRef<BottomSheetOverviewExampleSheet>) { }
+export class BottomSheetOverviewExampleSheetComponent {
+
+    constructor(
+        private bottomSheetRef: MatBottomSheetRef<BottomSheetOverviewExampleSheetComponent>
+    ) { }
 
     openLink(event: MouseEvent): void {
         this.bottomSheetRef.dismiss();

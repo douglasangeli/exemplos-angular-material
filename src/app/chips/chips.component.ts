@@ -18,6 +18,20 @@ export class ChipsComponent {
   readonly separatorKeysCodes: number[] = [ENTER, COMMA];
 
   /*
+   * COM FILTRO
+   */
+  visible = true;
+  selectable = true;
+  removable = true;
+  addOnBlur = false;
+  fruitCtrl = new FormControl();
+  filteredFruits: Observable<string[]>;
+  fruits: string[] = ['Limão'];
+  allFruits: string[] = ['Maçã', 'Limão', 'Lima', 'Laranja', 'Morango'];
+
+  @ViewChild('fruitInput') fruitInput: ElementRef<HTMLInputElement>;
+
+  /*
    * SEM FILTRO
    */
   visible1 = true;
@@ -52,21 +66,6 @@ export class ChipsComponent {
       this.fruits1.splice(index, 1);
     }
   }
-
-
-  /*
-   * COM FILTRO
-   */
-  visible = true;
-  selectable = true;
-  removable = true;
-  addOnBlur = false;
-  fruitCtrl = new FormControl();
-  filteredFruits: Observable<string[]>;
-  fruits: string[] = ['Limão'];
-  allFruits: string[] = ['Maçã', 'Limão', 'Lima', 'Laranja', 'Morango'];
-
-  @ViewChild('fruitInput') fruitInput: ElementRef<HTMLInputElement>;
 
   constructor() {
     this.filteredFruits = this.fruitCtrl.valueChanges.pipe(

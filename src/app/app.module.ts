@@ -54,8 +54,8 @@ import { SlideToggleComponent } from './slide-toggle/slide-toggle.component';
 import { AutocompleteComponent } from './autocomplete/autocomplete.component';
 import { ChipsComponent } from './chips/chips.component';
 import { ButtonComponent } from './button/button.component';
-import { DialogOverviewExampleDialog } from './shared/dialog-overview-example-dialog';
-import { BottomSheetOverviewExampleSheet } from './shared/bottom-sheet-overview-example-sheet';
+import { DialogOverviewExampleDialogComponent } from './shared/dialog-overview-example-dialog';
+import { BottomSheetOverviewExampleSheetComponent } from './shared/bottom-sheet-overview-example-sheet';
 import { TabsComponent } from './tabs/tabs.component';
 import { ProgressComponent } from './progress/progress.component';
 import { TabelasComponent } from './tabelas/tabelas.component';
@@ -80,8 +80,8 @@ const ptBrDateProvider: Provider = { provide: MAT_DATE_LOCALE, useValue: 'pt-BR'
     AutocompleteComponent,
     ChipsComponent,
     ButtonComponent,
-    DialogOverviewExampleDialog,
-    BottomSheetOverviewExampleSheet,
+    DialogOverviewExampleDialogComponent,
+    BottomSheetOverviewExampleSheetComponent,
     TabsComponent,
     ProgressComponent,
     TabelasComponent,
@@ -137,8 +137,8 @@ const ptBrDateProvider: Provider = { provide: MAT_DATE_LOCALE, useValue: 'pt-BR'
   ],
   bootstrap: [AppComponent],
   entryComponents: [
-    DialogOverviewExampleDialog,
-    BottomSheetOverviewExampleSheet
+    DialogOverviewExampleDialogComponent,
+    BottomSheetOverviewExampleSheetComponent
   ]
 })
 export class AppModule { }

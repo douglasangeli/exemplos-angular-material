@@ -117,7 +117,7 @@ export class AutocompleteComponent implements OnInit {
         map(name => name ? this.filterUser(name) : this.usuarios.slice())
       );
 
-    this.stateGroupOptions = this.stateForm.get('stateGroup')!.valueChanges
+    this.stateGroupOptions = this.stateForm.get('stateGroup').valueChanges
       .pipe(
         startWith(''),
         map(value => this.filterGroup(value))

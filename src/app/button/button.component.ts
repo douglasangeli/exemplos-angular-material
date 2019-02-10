@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar, MatDialog, MatBottomSheet } from '@angular/material';
-import { DialogOverviewExampleDialog } from '../shared/dialog-overview-example-dialog';
-import { BottomSheetOverviewExampleSheet } from '../shared/bottom-sheet-overview-example-sheet';
+import { DialogOverviewExampleDialogComponent } from '../shared/dialog-overview-example-dialog';
+import { BottomSheetOverviewExampleSheetComponent } from '../shared/bottom-sheet-overview-example-sheet';
 
 @Component({
   selector: 'app-button',
@@ -29,7 +29,7 @@ export class ButtonComponent implements OnInit {
   }
 
   openDialog(): void {
-    const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
+    const dialogRef = this.dialog.open(DialogOverviewExampleDialogComponent, {
       width: '250px',
       data: 'teste'
     });
@@ -40,7 +40,7 @@ export class ButtonComponent implements OnInit {
   }
 
   openBottomSheet(): void {
-    this.bottomSheet.open(BottomSheetOverviewExampleSheet);
+    this.bottomSheet.open(BottomSheetOverviewExampleSheetComponent);
   }
 
 }

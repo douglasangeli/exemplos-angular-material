@@ -10,6 +10,7 @@ export class FormFieldsComponent implements OnInit {
 
   esconderSenha: boolean;
   options: FormGroup;
+  email = new FormControl('', [Validators.required, Validators.email]);
 
   constructor(fb: FormBuilder) {
     this.options = fb.group({
@@ -24,8 +25,6 @@ export class FormFieldsComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  email = new FormControl('', [Validators.required, Validators.email]);
 
   getErrorMessage() {
     return this.email.hasError('required') ? 'email obrigatório' :

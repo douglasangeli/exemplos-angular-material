@@ -10,7 +10,7 @@ import { map } from 'rxjs/operators';
 })
 export class NavegacaoComponent {
 
-  title = "Exemplos Material Angular";
+  title = 'Exemplos Material Angular';
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(

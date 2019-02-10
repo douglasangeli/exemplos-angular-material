@@ -1,14 +1,14 @@
-import { Component, Inject } from "@angular/core";
-import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material";
+import { Component, Inject } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 @Component({
-    selector: 'dialog-overview-example-dialog',
+    selector: 'app-dialog-overview-example-dialog',
     templateUrl: 'dialog-overview-example-dialog.html',
 })
-export class DialogOverviewExampleDialog {
+export class DialogOverviewExampleDialogComponent {
 
     constructor(
-        public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,
+        public dialogRef: MatDialogRef<DialogOverviewExampleDialogComponent>,
         @Inject(MAT_DIALOG_DATA) public data: string
     ) { }
 

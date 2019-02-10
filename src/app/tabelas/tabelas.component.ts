@@ -31,7 +31,7 @@ export class TabelasComponent implements OnInit {
   cabecalhoFixo: boolean;
 
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = new MatTableDataSource(ELEMENT_DATA);//ELEMENT_DATA
+  dataSource = new MatTableDataSource(ELEMENT_DATA); // ELEMENT_DATA
 
   constructor() { }
 
@@ -48,7 +48,7 @@ export class TabelasComponent implements OnInit {
   }
 
   public chkClass() {
-    let newClass = {};
+    const newClass = {};
     newClass['mat-elevation-z8'] = true;
     newClass['example-container'] = this.cabecalhoFixo;
     return newClass;
