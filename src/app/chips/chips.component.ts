@@ -2,6 +2,7 @@ import { Component, ViewChild, ElementRef } from '@angular/core';
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { MatChipInputEvent, MatAutocompleteSelectedEvent } from '@angular/material';
 import { FormControl } from '@angular/forms';
+
 import { Observable } from 'rxjs';
 import { startWith, map } from 'rxjs/operators';
 
@@ -29,7 +30,7 @@ export class ChipsComponent {
   fruits: string[] = ['Limão'];
   allFruits: string[] = ['Maçã', 'Limão', 'Lima', 'Laranja', 'Morango'];
 
-  @ViewChild('fruitInput') fruitInput: ElementRef<HTMLInputElement>;
+  @ViewChild('fruitInput', { static: false }) fruitInput!: ElementRef<HTMLInputElement>;
 
   /*
    * SEM FILTRO
