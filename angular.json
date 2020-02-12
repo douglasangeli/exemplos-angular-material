@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "olamundo": {
+    "exemplos-angular-material": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -14,7 +14,7 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "aot": true,
-            "outputPath": "dist/olamundo",
+            "outputPath": "dist/exemplos-angular-material",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -60,18 +60,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "olamundo:build"
+            "browserTarget": "exemplos-angular-material:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "olamundo:build:production"
+              "browserTarget": "exemplos-angular-material:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "olamundo:build"
+            "browserTarget": "exemplos-angular-material:build"
           }
         },
         "test": {
@@ -108,7 +108,7 @@
         }
       }
     },
-    "olamundo-e2e": {
+    "exemplos-angular-material-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -116,11 +116,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "olamundo:serve"
+            "devServerTarget": "exemplos-angular-material:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "olamundo:serve:production"
+              "devServerTarget": "exemplos-angular-material:serve:production"
             }
           }
         },
@@ -136,5 +136,5 @@
       }
     }
   },
-  "defaultProject": "olamundo"
+  "defaultProject": "exemplos-angular-material"
 }

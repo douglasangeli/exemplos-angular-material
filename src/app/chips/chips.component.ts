@@ -1,11 +1,10 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 import { MatChipInputEvent } from '@angular/material/chips';
-import { FormControl } from '@angular/forms';
-
 import { Observable } from 'rxjs';
-import { startWith, map } from 'rxjs/operators';
+import { filter, map } from 'rxjs/operators';
 
 export interface Fruit {
   name: string;
@@ -71,7 +70,7 @@ export class ChipsComponent {
 
   constructor() {
     this.filteredFruits = this.fruitCtrl.valueChanges.pipe(
-      startWith(null),
+      filter(f => f != null),
       map((fruit: string | null) => fruit ? this._filter(fruit) : this.allFruits.slice()));
   }
 
