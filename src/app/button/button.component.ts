@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { MatSnackBar, MatDialog, MatBottomSheet } from '@angular/material';
+import { MatBottomSheet } from '@angular/material/bottom-sheet';
+import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { DialogOverviewExampleDialogComponent } from '../shared/dialog-overview-example-dialog';
 import { BottomSheetOverviewExampleSheetComponent } from '../shared/bottom-sheet-overview-example-sheet';
 
