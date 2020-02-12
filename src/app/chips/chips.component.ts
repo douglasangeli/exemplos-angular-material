@@ -50,7 +50,7 @@ export class ChipsComponent {
     const value = event.value;
 
     // Add our fruit
-    if ((value || '').trim()) {
+    if ((value ?? '').trim()) {
       this.fruits1.push({ name: value.trim() });
     }
 
