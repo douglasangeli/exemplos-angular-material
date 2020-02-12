@@ -30,7 +30,7 @@ export class ChipsComponent {
   fruits: string[] = ['Limão'];
   allFruits: string[] = ['Maçã', 'Limão', 'Lima', 'Laranja', 'Morango'];
 
-  @ViewChild('fruitInput', { static: false }) fruitInput!: ElementRef<HTMLInputElement>;
+  @ViewChild('fruitInput') fruitInput!: ElementRef<HTMLInputElement>;
 
   /*
    * SEM FILTRO

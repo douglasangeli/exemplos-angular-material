@@ -35,8 +35,8 @@ export class TabelasComponent implements OnInit {
 
   constructor() { }
 
-  @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
-  @ViewChild(MatSort, { static: false }) sort: MatSort;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
 
   ngOnInit() {
     this.dataSource.sort = this.sort;
