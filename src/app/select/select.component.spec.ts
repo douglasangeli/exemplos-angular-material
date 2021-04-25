@@ -1,6 +1,14 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatCardModule } from '@angular/material/card';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatOptionModule } from '@angular/material/core';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { SelectComponent } from './select.component';
+
 
 describe('SelectComponent', () => {
   let component: SelectComponent;
@@ -8,9 +16,20 @@ describe('SelectComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ SelectComponent ]
+      imports: [
+        MatSelectModule,
+        MatOptionModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatCardModule,
+        MatCheckboxModule,
+        FormsModule,
+        ReactiveFormsModule,
+        NoopAnimationsModule,
+      ],
+      declarations: [SelectComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

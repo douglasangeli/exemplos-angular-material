@@ -1,4 +1,10 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { MatCardModule } from '@angular/material/card';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import { DatepickerComponent } from './datepicker.component';
 
@@ -8,9 +14,17 @@ describe('DatepickerComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ DatepickerComponent ]
+      imports: [
+        MatDatepickerModule,
+        NoopAnimationsModule,
+        MatCardModule,
+        MatNativeDateModule,
+        MatFormFieldModule,
+        MatInputModule,
+      ],
+      declarations: [DatepickerComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

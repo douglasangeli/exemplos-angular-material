@@ -1,4 +1,7 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { MatCardModule } from '@angular/material/card';
+import { MatRadioModule } from '@angular/material/radio';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import { RadioButtonComponent } from './radio-button.component';
 
@@ -8,9 +11,14 @@ describe('RadioButtonComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ RadioButtonComponent ]
+      imports: [
+        MatRadioModule,
+        NoopAnimationsModule,
+        MatCardModule,
+      ],
+      declarations: [RadioButtonComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
