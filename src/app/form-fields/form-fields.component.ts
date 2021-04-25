@@ -1,12 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators, FormGroup, FormBuilder } from '@angular/forms';
+import { Component } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-form-fields',
   templateUrl: './form-fields.component.html',
   styleUrls: ['./form-fields.component.css']
 })
-export class FormFieldsComponent implements OnInit {
+export class FormFieldsComponent {
 
   esconderSenha: boolean;
   options: FormGroup;
@@ -21,9 +21,6 @@ export class FormFieldsComponent implements OnInit {
 
   getFontSize() {
     return Math.max(10, this.options.value.fontSize);
-  }
-
-  ngOnInit() {
   }
 
   getErrorMessage() {

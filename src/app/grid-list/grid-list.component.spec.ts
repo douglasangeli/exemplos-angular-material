@@ -1,4 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { MatCardModule } from '@angular/material/card';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 import { GridListComponent } from './grid-list.component';
 
@@ -6,11 +8,15 @@ describe('GridListComponent', () => {
   let component: GridListComponent;
   let fixture: ComponentFixture<GridListComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ GridListComponent ]
+      imports: [
+        MatCardModule,
+        MatGridListModule,
+      ],
+      declarations: [GridListComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
