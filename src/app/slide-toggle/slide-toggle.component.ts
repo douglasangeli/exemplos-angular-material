@@ -5,11 +5,8 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './slide-toggle.component.html',
   styleUrls: ['./slide-toggle.component.css']
 })
-export class SlideToggleComponent implements OnInit {
+export class SlideToggleComponent {
 
   constructor() { }
-
-  ngOnInit() {
-  }
 
 }
