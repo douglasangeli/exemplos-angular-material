@@ -1,22 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { DialogOverviewExampleDialogComponent } from '../shared/dialog-overview-example-dialog';
 import { BottomSheetOverviewExampleSheetComponent } from '../shared/bottom-sheet-overview-example-sheet';
+import { DialogOverviewExampleDialogComponent } from '../shared/dialog-overview-example-dialog';
 
 @Component({
   selector: 'app-button',
   templateUrl: './button.component.html',
   styleUrls: ['./button.component.css']
 })
-export class ButtonComponent implements OnInit {
+export class ButtonComponent {
 
   message = 'Olá! Obrigado por clicar...';
   action = 'Ok';
-
-  ngOnInit() {
-  }
 
   constructor(
     public snackBar: MatSnackBar,

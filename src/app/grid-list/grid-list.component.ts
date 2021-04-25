@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 export interface Tile {
   color: string;
@@ -12,7 +12,7 @@ export interface Tile {
   templateUrl: './grid-list.component.html',
   styleUrls: ['./grid-list.component.css']
 })
-export class GridListComponent implements OnInit {
+export class GridListComponent {
 
   tiles: Tile[] = [
     { text: 'One', cols: 3, rows: 1, color: 'lightblue' },
@@ -22,8 +22,5 @@ export class GridListComponent implements OnInit {
   ];
 
   constructor() { }
-
-  ngOnInit() {
-  }
 
 }

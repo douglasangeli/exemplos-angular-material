@@ -1,4 +1,11 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatStepperModule } from '@angular/material/stepper';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import { StepperComponent } from './stepper.component';
 
@@ -6,11 +13,20 @@ describe('StepperComponent', () => {
   let component: StepperComponent;
   let fixture: ComponentFixture<StepperComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ StepperComponent ]
+      imports: [
+        ReactiveFormsModule,
+        MatButtonModule,
+        MatStepperModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatCardModule,
+        NoopAnimationsModule,
+      ],
+      declarations: [StepperComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

@@ -1,4 +1,7 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { MatCardModule } from '@angular/material/card';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import { SlideToggleComponent } from './slide-toggle.component';
 
@@ -6,8 +9,13 @@ describe('SlideToggleComponent', () => {
   let component: SlideToggleComponent;
   let fixture: ComponentFixture<SlideToggleComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
+      imports:[
+        MatSlideToggleModule,
+        MatCardModule,
+        NoopAnimationsModule,
+      ],
       declarations: [ SlideToggleComponent ]
     })
     .compileComponents();
