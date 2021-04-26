@@ -13,7 +13,7 @@ export interface Fruit {
 @Component({
   selector: 'app-chips',
   templateUrl: './chips.component.html',
-  styleUrls: ['./chips.component.css']
+  styleUrls: ['./chips.component.scss']
 })
 export class ChipsComponent {
   readonly separatorKeysCodes: number[] = [ENTER, COMMA];

@@ -28,7 +28,7 @@
                 "input": "node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
                 "inject": true
               },
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": []
           },
@@ -86,7 +86,7 @@
                 "input": "node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
                 "inject": true
               },
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": [],
             "assets": [
@@ -108,6 +108,11 @@
     }
   },
   "defaultProject": "exemplos-angular-material",
+  "schematics": {
+    "@schematics/angular:component": {
+      "style": "scss"
+    }
+  },
   "cli": {
     "defaultCollection": "@angular-eslint/schematics"
   }

@@ -7,7 +7,7 @@
     vai!</button>
 
   <h5>Botão Simples Elevado e Dialog</h5>
-  <button mat-button mat-raised-button (click)="openDialog()">Clica, vai!</button>
+  <button mat-button mat-raised-button color="accent" (click)="openDialog()">Clica, vai!</button>
 
   <h5>Bottom Sheet</h5>
   <button mat-button mat-raised-button (click)="openBottomSheet()">Clica, vai!</button>
@@ -21,15 +21,37 @@
 
   <h5>Toggle</h5>
   <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
-    <mat-button-toggle value="bold">Bold</mat-button-toggle>
-    <mat-button-toggle value="italic">Italic</mat-button-toggle>
-    <mat-button-toggle value="underline">Underline</mat-button-toggle>
+    <mat-button-toggle value="bold">
+      Bold
+      <mat-icon>format_bold</mat-icon>
+    </mat-button-toggle>
+    <mat-button-toggle value="italic">
+      Italic
+      <mat-icon>format_italic</mat-icon>
+    </mat-button-toggle>
+    <mat-button-toggle value="underline">
+      Underline
+      <mat-icon>format_underlined</mat-icon>
+    </mat-button-toggle>
   </mat-button-toggle-group>
 
   <h5>Toggle Múltiplo</h5>
   <mat-button-toggle-group multiple name="fontStyle" aria-label="Font Style">
-    <mat-button-toggle value="bold">Bold</mat-button-toggle>
-    <mat-button-toggle value="italic">Italic</mat-button-toggle>
-    <mat-button-toggle value="underline">Underline</mat-button-toggle>
+    <mat-button-toggle value="bold">
+      <mat-icon>format_bold</mat-icon>
+      Bold
+    </mat-button-toggle>
+    <mat-button-toggle value="italic">
+      <mat-icon>format_italic</mat-icon>
+      Italic
+    </mat-button-toggle>
+    <mat-button-toggle value="underline">
+      <mat-icon>format_underlined</mat-icon>
+      Underline
+    </mat-button-toggle>
   </mat-button-toggle-group>
+
+  <button class="flutuar" mat-fab (click)="onFabClick()">
+    <mat-icon>fingerprint</mat-icon>
+  </button>
 </mat-card-content>

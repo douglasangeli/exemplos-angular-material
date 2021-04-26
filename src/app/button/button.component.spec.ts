@@ -4,6 +4,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
@@ -20,6 +21,7 @@ describe('ButtonComponent', () => {
         MatSnackBarModule,
         MatDialogModule,
         MatMenuModule,
+        MatIconModule,
         MatButtonModule,
         MatButtonToggleModule,
         MatBottomSheetModule,

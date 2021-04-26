@@ -26,7 +26,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 @Component({
   selector: 'app-tabelas',
   templateUrl: './tabelas.component.html',
-  styleUrls: ['./tabelas.component.css']
+  styleUrls: ['./tabelas.component.scss']
 })
 export class TabelasComponent implements OnInit {
 
@@ -45,8 +45,11 @@ export class TabelasComponent implements OnInit {
     this.dataSource.paginator = this.paginator;
   }
 
-  applyFilter(filterValue: string) {
-    this.dataSource.filter = filterValue.trim().toLowerCase();
+  applyFilter(event: KeyboardEvent) {
+    if (event.target instanceof HTMLInputElement) {
+      const filterValue: string = event.target.value;
+      this.dataSource.filter = filterValue.trim().toLowerCase();
+    }
   }
 
   public chkClass() {

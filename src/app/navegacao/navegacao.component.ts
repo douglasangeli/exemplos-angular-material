@@ -6,7 +6,7 @@ import { map } from 'rxjs/operators';
 @Component({
   selector: 'app-navegacao',
   templateUrl: './navegacao.component.html',
-  styleUrls: ['./navegacao.component.css']
+  styleUrls: ['./navegacao.component.scss']
 })
 export class NavegacaoComponent {
 

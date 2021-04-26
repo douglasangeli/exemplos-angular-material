@@ -8,7 +8,7 @@ import { DialogOverviewExampleDialogComponent } from '../shared/dialog-overview-
 @Component({
   selector: 'app-button',
   templateUrl: './button.component.html',
-  styleUrls: ['./button.component.css']
+  styleUrls: ['./button.component.scss']
 })
 export class ButtonComponent {
 
@@ -40,6 +40,10 @@ export class ButtonComponent {
 
   openBottomSheet(): void {
     this.bottomSheet.open(BottomSheetOverviewExampleSheetComponent);
+  }
+
+  onFabClick() {
+    alert('Ei, não clica aí!')
   }
 
 }

@@ -1,28 +1,21 @@
-<mat-card-title>
-  Progress
-</mat-card-title>
+<mat-card-title> Progress </mat-card-title>
 <mat-card-content>
-
   <mat-card>
-    <mat-card-title>
-      Progress Spinner
-    </mat-card-title>
-    <mat-divider [inset]="true">
-    </mat-divider>
-    <mat-card-content>
-      <mat-spinner>
-      </mat-spinner>
+    <mat-card-title> Progress Spinner </mat-card-title>
+    <mat-divider [inset]="true"> </mat-divider>
+    <mat-card-content class="spinner-container">
+      <mat-spinner> </mat-spinner>
+      <mat-spinner color="accent"> </mat-spinner>
+      <mat-spinner color="warn"> </mat-spinner>
     </mat-card-content>
   </mat-card>
 
-  <br> <br>
+  <br />
+  <br />
 
   <mat-card>
-    <mat-card-title>
-      Progress Bar
-    </mat-card-title>
-    <mat-divider [inset]="true">
-    </mat-divider>
+    <mat-card-title> Progress Bar </mat-card-title>
+    <mat-divider [inset]="true"> </mat-divider>
     <mat-card-content>
       <h3>Determinate</h3>
       <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
@@ -34,5 +27,4 @@
       <mat-progress-bar mode="query"></mat-progress-bar>
     </mat-card-content>
   </mat-card>
-
 </mat-card-content>

@@ -10,7 +10,7 @@ export interface Tile {
 @Component({
   selector: 'app-grid-list',
   templateUrl: './grid-list.component.html',
-  styleUrls: ['./grid-list.component.css']
+  styleUrls: ['./grid-list.component.scss']
 })
 export class GridListComponent {
 
