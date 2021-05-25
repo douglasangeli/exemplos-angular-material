@@ -1,11 +1,16 @@
-<mat-card-title>
-  Radio Button
-</mat-card-title>
-<mat-card-content>
-
-  <mat-radio-group>
-    <mat-radio-button value="1">Primeira Opção</mat-radio-button>
-    <mat-radio-button value="2">Segunda Opção</mat-radio-button>
-  </mat-radio-group>
-
-</mat-card-content>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title> Radio Button </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-radio-group aria-label="Select an option" class="example-radio-group">
+      <mat-radio-button
+        class="example-radio-button"
+        *ngFor="let index of [1, 2, 3, 4, 5]"
+        [value]="index"
+      >
+        Opção {{ index }}
+      </mat-radio-button>
+    </mat-radio-group>
+  </mat-card-content>
+</mat-card>

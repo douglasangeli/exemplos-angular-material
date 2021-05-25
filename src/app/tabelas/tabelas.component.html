@@ -4,7 +4,7 @@
 <mat-card-content>
   <mat-form-field appearance="outline">
     <mat-label>Filtrar Elementos</mat-label>
-    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filtro">
+    <input matInput (keyup)="applyFilter($event)" placeholder="Filtro">
   </mat-form-field>
 
   <div [ngClass]="chkClass()">
